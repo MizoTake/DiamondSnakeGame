@@ -1,0 +1,31 @@
+# Assets Ignore
+
+Demigiant/
+Demigiant.meta
+
+Doozy/
+Doozy.meta
+
+Gizmos/
+Gizmos.meta
+
+Mirror/
+Mirror.meta
+
+PlayMaker/
+PlayMaker.meta
+
+Plugins/
+Plugins.meta
+
+ScriptTemplates/
+ScriptTemplates.meta
+
+Suriyun/
+Suriyun.meta
+
+TextMesh Pro/
+TextMesh Pro.meta
+
+UniRx.Async/
+UniRx.Async.meta
