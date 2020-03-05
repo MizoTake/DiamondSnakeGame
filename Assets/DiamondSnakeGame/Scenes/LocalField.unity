@@ -394,6 +394,24 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 589800823}
+--- !u!1 &1136161073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4852660359575525380, guid: d84d5d2dc3ab9824186e4166bb3fb142,
+    type: 3}
+  m_PrefabInstance: {fileID: 8856893128826596168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1136161074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136161073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ad2372470b5564da7ddf5ceb57e0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1171458460
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,5 +768,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5241640310076908712, guid: d84d5d2dc3ab9824186e4166bb3fb142,
+        type: 3}
+      propertyPath: injector
+      value: 
+      objectReference: {fileID: 1136161074}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d84d5d2dc3ab9824186e4166bb3fb142, type: 3}

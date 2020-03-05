@@ -12,10 +12,10 @@ namespace DiamondSnakeGame.Scripts.Components.StateMachineBehaviour
         private IPlayerActions playerActions;
 
         [Inject]
-        private void Injection(IPlayerActions playerActions)
+        private void Injection(IInputActionProvider provider)
         {
-            this.playerActions = playerActions;
-            Debug.Log($"inject");
+            playerActions = provider.InputPlayerActions;
+            playerActions.OnMoveAction += InputPerformed;
         }
 
         private void InputPerformed(InputAction.CallbackContext context)
@@ -23,16 +23,10 @@ namespace DiamondSnakeGame.Scripts.Components.StateMachineBehaviour
             this.context = context;
         }
 
-        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-            playerActions.OnMoveAction += InputPerformed;
-        }
-
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             foreach (ActionValue inputAction in System.Enum.GetValues(typeof(ActionValue)))
             {
-                Debug.Log(inputAction.ReadValue(context));
                 animator.SetFloat(inputAction.Name(), inputAction.ReadValue(context));
             }
         }

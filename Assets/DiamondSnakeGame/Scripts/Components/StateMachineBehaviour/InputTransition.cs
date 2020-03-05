@@ -10,27 +10,24 @@ namespace DiamondSnakeGame.Scripts.Components.StateMachineBehaviour
     public class InputTransition : UnityEngine.StateMachineBehaviour
     {
 
-        [SerializeField] private ActionValue inputActionValue;
+        [SerializeField]
+        private ActionValue inputActionValue;
 
         private InputAction.CallbackContext context = default;
         private IPlayerActions playerActions;
 
         [Inject]
-        private void Injection(IPlayerActions playerActions)
+        private void Injection(IInputActionProvider provider)
         {
-            this.playerActions = playerActions;
+            playerActions = provider.InputPlayerActions;
+            playerActions.OnMoveAction += InputPerformed;
         }
 
         private void InputPerformed(InputAction.CallbackContext context)
         {
             this.context = context;
         }
-
-        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        {
-            playerActions.OnMoveAction += InputPerformed;
-        }
-
+        
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             animator.SetFloat(inputActionValue.Name(), inputActionValue.ReadValue(context));

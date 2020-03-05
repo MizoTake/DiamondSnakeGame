@@ -1,4 +1,5 @@
 ﻿using DiamondSnakeGame.Scripts.Character.Interface;
+using DiamondSnakeGame.Scripts.Components;
 using DiamondSnakeGame.Scripts.Extensions;
 using DiamondSnakeGame.Scripts.Provider.Interface;
 using UniRx;
@@ -13,6 +14,8 @@ namespace DiamondSnakeGame.Scripts.Character
         
         [SerializeField]
         private CharacterView view;
+        [SerializeField]
+        private StateMachineBehaviourInjector injector;
         
         private ICharacterViewModel viewModel;
         private IInputActionProvider inputProvider;
@@ -27,6 +30,7 @@ namespace DiamondSnakeGame.Scripts.Character
         void Start()
         {
             view.Setup(viewModel.CharacterModelPrefab);
+            injector.InjectionTo(view.Animator);
 
             var playerAction = inputProvider.InputPlayerActions;
             this.UpdateAsObservable()

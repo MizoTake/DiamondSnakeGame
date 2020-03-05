@@ -13,6 +13,8 @@ namespace DiamondSnakeGame.Scripts.Character
         
         private Animator animator;
 
+        public Animator Animator => animator;
+
         public void Setup(GameObject childPrefab)
         {
             var child = Instantiate(childPrefab, transform);
