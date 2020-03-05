@@ -23,10 +23,5 @@ namespace DiamondSnakeGame.Scripts.Character
         {
             
         }
-
-//        public AnimationState AnimState()
-//        {
-//            
-//        }
     }
 }

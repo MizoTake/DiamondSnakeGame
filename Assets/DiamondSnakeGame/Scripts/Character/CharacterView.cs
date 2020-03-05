@@ -30,10 +30,8 @@ namespace DiamondSnakeGame.Scripts.Character
             var cameraForward = Vector3.Scale (camera.transform.forward, new Vector3 (1, 0, 1)).normalized;
             var moveForward = cameraForward * y + camera.transform.right * x;
             agent.Move(moveForward);
-            if (moveForward != Vector3.zero)
-            {
-                transform.localRotation = Quaternion.LookRotation(moveForward);
-            }
+            if (moveForward == Vector3.zero) return;
+            transform.localRotation = Quaternion.LookRotation(moveForward);
         }
     }
 }
